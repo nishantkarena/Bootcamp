@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Demo JQuery</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				$("#BtnFadeOut").attr("disabled",true);
+			
+				$("#BtnFadeIn").click(function(){
+					if(confirm("Are You Sure..??"))
+					{
+						$("#div1").fadeIn(1000);
+						$("#div2").fadeIn(2000);
+						$("#div3").fadeIn(3000);
+						$("#BtnFadeOut").attr("disabled",false);
+						$(this).attr("disabled",true);
+					}
+				});
+				$("#BtnFadeOut").click(function(){
+					if(confirm("Are You Sure..??"))
+					{
+						$("#div1").fadeOut(1000);
+						$("#div2").fadeOut(2000);
+						$("#div3").fadeOut(3000);
+						$("#BtnFadeIn").attr("disabled",false);
+						$(this).attr("disabled",true);
+					}
+				});
+				$("#BtnFadeToggle").click(function(){
+					if(confirm("Are You Sure..??"))
+					{
+						$("#div1").fadeToggle(1000);
+						$("#div2").fadeToggle(2000);
+						$("#div3").fadeToggle(3000);
+					}
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<button id="BtnFadeIn">Click Me For Fade In</button>&nbsp;&nbsp;<button id="BtnFadeOut">Click Me For Fade Out</button>&nbsp;&nbsp;<button id="BtnFadeToggle">Click Me For Fade In / Out Toggle</button>
+		<div id="div1" style="height:100px;width:100px;background-color:Navy;display:none;"></div><br />
+		<div id="div2" style="height:100px;width:100px;background-color:Red;display:none;"></div><br />
+		<div id="div3" style="height:100px;width:100px;background-color:Yellow;display:none;"></div><br />
+	</body>
+
+</html>

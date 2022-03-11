@@ -1,0 +1,385 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link href="css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" />
+		<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="   crossorigin="anonymous"></script>
+		
+		<script type="text/javascript">
+			
+			 
+			 var $FNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
+			 var $PasswordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,12}$/;
+			 var $EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/i;
+			var $ConNoRegEx = /^([0-9]{10})$/;
+			var $AgeRegEx = /^([0-9]{1,2})$/;
+
+			$(document).ready(function(){
+				
+				
+				var fnameflag=false,lnameflag=false,birthdateflag=false,ageflag=false,contactflag=false,emailflag=false,passwordflag=false;
+				$("#txtfirstname").blur(function(){
+					$("#txtfirstnameval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtfirstnameval").html("(*) Firstname required..!!");
+						fnameflag=false;
+					}
+					else{
+						if(!$(this).val().match($FNameLNameRegEx))
+						{
+							$("#txtfirstnameval").html("(*) Invalid firstname..!!");
+							fnameflag=false;
+						}
+						else{
+							fnameflag=true;
+						}
+					}
+				});
+				$("#txtlastname").blur(function(){
+					$("#txtlastnameval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtlastnameval").html("(*) Lastname required..!!");
+						lnameflag=false;
+					}
+					else{
+						if(!$(this).val().match($FNameLNameRegEx))
+						{
+							$("#txtlastnameval").html("(*) Invalid Lastname..!!");
+							lnameflag=false;
+						}
+						else{
+							lnameflag=true;
+						}
+					}
+				});
+				$("#txtage").blur(function(){
+					$("#txtageval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtageval").html("(*) Age required..!!");
+						ageflag=false;
+					}
+					else{
+						if(!$(this).val().match($AgeRegEx))
+						{
+							$("#txtageval").html("(*) Invalid Age..!!");
+							ageflag=false;
+						}
+						else{
+							ageflag=true;
+						}
+					}
+				});
+				$("#txtcontact").blur(function(){
+					$("#txtcontactval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtcontactval").html("(*) Contact no. required..!!");
+						contactflag=false;
+					}
+					else{
+						if(!$(this).val().match($ConNoRegEx))
+						{
+							$("#txtcontactval").html("(*) Invalid Contact..!!");
+							contactflag=false;
+						}
+						else{
+							contactflag=true;
+						}
+					}
+				});
+				$("#txtemail").blur(function(){
+					$("#txtemailval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtemailval").html("(*) Email required..!!");
+						emailflag=false;
+					}
+					else{
+						if(!$(this).val().match($EmailIdRegEx))
+						{
+							$("#txtemailval").html("(*) Invalid Email..!!");
+							emailflag=false;
+						}
+						else{
+							emailflag=true;
+						}
+					}
+				});
+				$("#txtpassword").blur(function(){
+					$("#txtpasswordval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtpasswordval").html("(*) Password required..!!");
+						emailflag=false;
+					}
+					else{
+						if(!$(this).val().match($PasswordRegEx))
+						{
+							$("#txtpasswordval").html("(*) Invalid Password..!!");
+							emailflag=false;
+						}
+						else{
+							emailflag=true;
+						}
+					}
+				});
+				$("#txtage").blur(function(){
+					$("#txtageval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtageval").html("(*) Age required..!!");
+						emailflag=false;
+					}
+					else{
+						if(!$(this).val().match($AgeRegEx)||$(this).val()<18 || $(this).val()>100)
+						{
+							$("#txtageval").html("(*) Invalid Age..!!");
+							emailflag=false;
+						}
+						else{
+							emailflag=true;
+						}
+					}
+				});
+				$('#datepicker').datepicker({
+				maxDate: "-18y",
+				});
+				$('#cnaclick').click(function(){
+					$("#txtfirstnameval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtfirstnameval").html("(*) Firstname required..!!");
+						fnameflag=false;
+					}
+					else{
+						if(!$(this).val().match($FNameLNameRegEx))
+						{
+							$("#txtfirstnameval").html("(*) Invalid firstname..!!");
+							fnameflag=false;
+						}
+						else{
+							fnameflag=true;
+						}
+					}
+					$("#txtlastnameval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtlastnameval").html("(*) Lastname required..!!");
+						lnameflag=false;
+					}
+					else{
+						if(!$(this).val().match($FNameLNameRegEx))
+						{
+							$("#txtlastnameval").html("(*) Invalid Lastname..!!");
+							lnameflag=false;
+						}
+						else{
+							lnameflag=true;
+						}
+					}
+					$("#txtageval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtageval").html("(*) Age required..!!");
+						ageflag=false;
+					}
+					else{
+						if(!$(this).val().match($AgeRegEx))
+						{
+							$("#txtageval").html("(*) Invalid Age..!!");
+							ageflag=false;
+						}
+						else{
+							ageflag=true;
+						}
+					}
+					$("#txtcontactval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtcontactval").html("(*) Contact no. required..!!");
+						contactflag=false;
+					}
+					else{
+						if(!$(this).val().match($ConNoRegEx))
+						{
+							$("#txtcontactval").html("(*) Invalid Contact..!!");
+							contactflag=false;
+						}
+						else{
+							contactflag=true;
+						}
+					}
+					$("#txtemailval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtemailval").html("(*) Email required..!!");
+						emailflag=false;
+					}
+					else{
+						if(!$(this).val().match($EmailIdRegEx))
+						{
+							$("#txtemailval").html("(*) Invalid Email..!!");
+							emailflag=false;
+						}
+						else{
+							emailflag=true;
+						}
+					}
+					$("#txtpasswordval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtpasswordval").html("(*) Password required..!!");
+						emailflag=false;
+					}
+					else{
+						if(!$(this).val().match($PasswordRegEx))
+						{
+							$("#txtpasswordval").html("(*) Invalid Password..!!");
+							emailflag=false;
+						}
+						else{
+							emailflag=true;
+						}
+					}
+					$("#txtageval").empty();
+					if($(this).val()=="" || $(this).val()==null)
+					{
+						$("#txtageval").html("(*) Age required..!!");
+						emailflag=false;
+					}
+					else{
+						if(!$(this).val().match($AgeRegEx)||$(this).val()<18 || $(this).val()>100)
+						{
+							$("#txtageval").html("(*) Invalid Age..!!");
+							emailflag=false;
+						}
+						else{
+							emailflag=true;
+						}
+					}
+				});
+				$('#txtfirstname').keypress(function(e){
+					$('#txtfnameval').empty();
+					var flag= false;
+					(e.which>=65 && e.which<=90) || (e.which>=92 && e.which<=122)
+					?flag=true
+					:(flag=false,$('#txtfirstnameval').html('(*) Please Enter Valid Name..'));
+					return flag;
+				});
+				$('#txtlastname').keypress(function(e){
+					$('#txtlastnameval').empty();
+					var flag= false;
+					(e.which>=65 && e.which<=90) || (e.which>=92 && e.which<=122)
+					?flag=true
+					:(flag=false,$('#txtlastnameval').html('(*) Please Enter Valid Name..'));
+					return flag;
+				});
+				$('#txtage').keypress(function(e){
+					$('#txtageval').empty();
+					var flag= false;
+					(e.which>=48 && e.which<=57)
+					?flag=true
+					:(flag=false,$('#txtageval').html('(*) Please Enter Valid age..'));
+					return flag;
+				});
+				$('#txtcontact').keypress(function(e){
+					$('#txtcontactval').empty();
+					var flag= false;
+					(e.which>=48 && e.which<=57)
+					?flag=true
+					:(flag=false,$('#txtcontactval').html('(*) Please Enter Valid Contact Number..'));
+					return flag;
+				});
+			});
+        </script>
+        <style type="text/css">
+            #cnform{box-shadow:0px 0px 3px gray;margin-top:30px;margin-bottom:30px;}
+			i.fa,b{color:teal;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12" id="cnform">
+                    <h3 class="text-center"><i class="fa fa-user-plus"></i>Create New Account</h3><hr>  
+                    <div class="form-group">
+						<b>Firstname</b>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input id="txtfirstname" type="text" placeholder="Enter firstname here" maxlength="20" class="form-control" />
+						</div>
+						<small id="txtfirstnameval" class="text-danger"></small>
+					</div>
+					<div class="form-group">
+						<b>Lastname</b>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input id="txtlastname" type="text" placeholder="Enter lastname here" maxlength="20" class="form-control" />
+						</div>
+						<small id="txtlastnameval" class="text-danger"></small>
+					</div>
+                    <div class="form-group">
+						<b>Gender</b>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-female"></i> | <i class="fa fa-male"></i></span>
+							<select name="" id="gender" class="form-control">
+                                <Option>Male</Option>
+                                <Option>Female</Option>
+                            </select>
+						</div>
+						<small id="genderval" class="text-danger"></small>
+					</div>
+					<div class="form-group">
+						<b>Birth Date</b>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+								<input type="text" class="form-control" id="datepicker">
+						</div>
+						<small id="birthdateval" class="text-danger"></small>
+					</div>
+					<div class="form-group">
+						<b>Age</b>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-child"></i></span>
+							<input id="txtage" type="text" placeholder="Enter Your Age" maxlength="3" class="form-control" />
+						</div>
+						<small id="txtageval" class="text-danger"></small>
+					</div>
+                    <div class="form-group">
+						<b>Contact No.</b>
+						<div class="input-group">
+							<span class="input-group-addon">+91</span>
+							<input id="txtcontact" type="text" placeholder="Enter contact here" maxlength="20" class="form-control" />
+						</div>
+						<small id="txtcontactval" class="text-danger"></small>
+					</div>
+                    <div class="form-group">
+						<b>Email</b>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+							<input id="txtemail" type="text" placeholder="Enter email id here" maxlength="50" class="form-control" />
+						</div>
+						<small id="txtemailval" class="text-danger"></small>
+					</div>
+                    <div class="form-group">
+						<b>Password</b>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-key"></i></span>
+							<input id="txtpassword" type="password" placeholder="Enter password here" maxlength="12" class="form-control" />
+						</div>
+						<small id="txtpasswordval" class="text-danger"></small>
+					</div>
+                    <div class="form-group">
+                        <a class="btn btn-primary" id="cnaclick"><i class="fa fa-user-plus" style="color:white;"></i> Create New Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

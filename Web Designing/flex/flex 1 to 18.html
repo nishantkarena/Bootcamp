@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Flex Container Item</title>
+        <style type="text/css">
+            body{
+                margin: 0;
+                padding: 0;
+                font-family:Tahoma;
+            }
+            .main-container{
+                border:4px solid #826a82;
+                /*display: flex;    1.block level flex container*/
+                
+                /* 2.flex display */
+                display: flex;
+
+                /* height: 300px; */
+
+                /* 3.flex direcrion */
+                /* flex-direction: row; */
+                /* flex-direction: column; */
+                /* flex-direction: column-reverse; */
+                /* flex-direction: row-reverse; */
+
+                /* 4.flex wrap row   5.flex wrap column*/
+                /* flex-wrap: wrap; */
+                /* flex-wrap: nowrap; */
+                /* flex-wrap: wrap-reverse; */
+
+                /* 6.flex flow row  7.flex flow column */
+                /* latest way to write and use flex-flow, instead of flex-direction and flex-wrap */
+                /* flex-flow: row wrap; */
+                /* flex-flow: row-reverse wrap; */
+                /* flex-flow: row-reverse wrap-reverse; */
+
+                /* 8.justify content row 9.justify content column */
+                /* justify-content: flex-start; */
+                /* justify-content: flex-end; */
+                /* justify-content: center; */
+                /* justify-content: space-between; */
+                /* justify-content: space-around; */
+                /* justify-content: space-evenly; */
+
+                /* 10. */
+                /* align-items: stretch;  default value for algn-iitems is stretch */
+                /* align-items: flex-start; */
+                /* align-items: flex-end; */
+                /* align-items: center; */
+                /* align-items: baseline; */
+
+                /* align-content: stretch; default value for align-content is stretch */
+                /* align-content: flex-start; */
+                /* align-content: flex-end; */
+                /* align-content: center; */
+                /* align-content: space-between; */
+                /* align-content: space-around; */
+            }
+            .item{
+                color: #ffffff;
+                font-size: 1rem;
+                padding: 0.75rem;
+                text-align: center;
+                flex-grow: 1;
+                /* flex-shrink: 3; default 1, so all items will shrink */
+                /* flex-shrink: 0; */ /* No items will shrink - will get scrollbar */
+            }
+            .item-1{
+                background-color: fuchsia;
+                padding-bottom: 2rem;
+                order: 3;
+            }
+            .item-2{
+                background-color: darkgoldenrod;
+                order: 1;
+            }
+            .item-3{
+                background-color: salmon;
+                padding-bottom: 3rem;
+                flex-grow: 1;
+            }
+            .item-4{
+                background-color: sienna;
+                /* flex-shrink: 20; */
+            }
+            .item-5{
+                background-color: slategrey;
+                font-size: 4rem;
+            }
+            .item-6{
+                background-color: hotpink;
+            }
+            .item-7{
+                background-color: khaki;
+                flex-basis: 6%;
+            }
+            .item-8{
+                background-color: darkorange;
+            }
+            .item-9{
+                background-color: silver;
+            }
+            .item-10{
+                background-color: violet;
+                flex-basis: 200px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="item item-1">Item-1</div>
+            <div class="item item-2">Item-2</div>
+            <div class="item item-3">Item-3</div>
+            <div class="item item-4">Item-4</div>
+            <div class="item item-5">Item-5</div>
+            <div class="item item-6">Item-6</div>
+            <div class="item item-7">Item-7</div>
+            <div class="item item-8">Item-8</div>
+            <div class="item item-9">Item-9</div>
+            <div class="item item-10">Item-10</div>
+        </div>
+    </body>
+</html>
