@@ -1,0 +1,23 @@
+create database firstdb
+
+Create table firsttable
+{
+	columnname datatype1,
+	columnname datatype2,
+	columnname datatype3,
+	columnname datatype4
+}
+
+INSERT INTO firsttable VALUES(data1, data2, ...)
+
+select * from firsttable
+
+ALTER TABLE firsttable ADD(emp_contact datatype);
+
+UPDATE student SET rollno=18 WHERE student_id=1;
+SELECT * FROM Emp ORDER BY emp_salary;
+SELECT emp_name, emp_age FROM firsttable GROUP BY salary;
+
+RENAME TABLE firstname to employee;
+DROP TABLE firsttable;
+
